@@ -1,0 +1,11 @@
+
+.App {
+    background:#F9F9F9;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    color: #2c3e50;
+}
+

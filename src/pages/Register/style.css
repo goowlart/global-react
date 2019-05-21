@@ -1,0 +1,24 @@
+
+.container {
+    background:#F9F9F9;
+    padding-top: 150px;
+    max-width: 400px;
+}
+.container p {
+    color: #1682ec;
+    display: inline-block;
+    cursor: pointer;
+}
+.container input {
+    color: #495057;
+    margin: 0px 0px 10px;
+
+}
+.container button {
+    margin: 30px 0px 40px;
+}
+.container h2 {
+    color: #2c3e50;
+    text-align: center;
+    padding-bottom: 20px;
+}
