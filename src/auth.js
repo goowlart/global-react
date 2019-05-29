@@ -1,4 +1,3 @@
-
 import axios from 'axios'
 import {setAuthorizationToken} from './utils/setAuthorizationToken'
 
@@ -10,7 +9,13 @@ export const login = async (data) => {
            const { token } = response.data
            localStorage.setItem('jwtToken', token)
            localStorage.setItem('isAthenticated', true)
-           setAuthorizationToken(token)
+           setAuthorizationToken(token) 
+
+           
+
+       }).catch (error => {
+           let {response} = error
+           localStorage.setItem('erros', JSON.stringify(response))
        })
    
 }
