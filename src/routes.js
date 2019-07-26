@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Home from './pages/Home'
 
 
 const PrivatedRoute =  ({component: Component, ...rest}) => (
@@ -22,7 +23,7 @@ const Routes = () => (
         <Switch>
             <Route exact path="/" component={Login}></Route>
             <Route exact path="/register" component={Register}></Route>
-            <PrivatedRoute path="/home"  component={()=> <h1>Safe zone</h1>} />
+            <PrivatedRoute path="/home"  component={Home} />
         </Switch>
     </BrowserRouter>
 );
