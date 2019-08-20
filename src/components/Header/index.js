@@ -1,7 +1,16 @@
-import Header from './Header';
-import HeaderCenterContent from './HeaderCenterContent.js';
-import HeaderLeftButton from './HeaderLeftButton.js';
-import HeaderRightButton from './HeaderRightButton.js';
+import React from 'react';
+import HeaderRightButton from './HeaderRightButton'
 
+import HeaderLeftButton from './HeaderLeftButton'
+import { Container } from './styles'
 
-export { Header, HeaderCenterContent, HeaderLeftButton, HeaderRightButton };
+export default function Header ({data}) {
+    
+        return (
+            <Container>
+            <HeaderLeftButton></HeaderLeftButton>
+            <HeaderRightButton></HeaderRightButton>
+            </Container>
+        );
+}
+

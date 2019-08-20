@@ -1,8 +1,9 @@
 import React from 'react';
+
 import Button from '../Button'
 
 
-export default function HeaderRightButton () {
+export default function HeaderRightButton (){
 
         return (
             <div className="col-6 col-md-2">

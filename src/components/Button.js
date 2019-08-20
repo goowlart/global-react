@@ -1,35 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 
+export default function Button({ placeholder, type, className, disabled, icon, iconColor, onClick }) {
 
-export default class Button extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            placeholder: props.placeholder,
-            type: props.type,
-            className: props.className,
-            disabled: props.disabled
-        };
-
+    const styleColorIcon = {
+        color: iconColor
     }
 
-    render() {
-        const { type, className, placeholder, disabled } = this.state
+    return (
+        <button
+            type={(type ? type : "button")}
+            className={(className ? className : "null")}
+            disabled={false || disabled}
+            onClick={onClick}
 
-        return (
-            <div className="form-group">
-                <button
-                    type={type}
-                    className={( className ? className : "btn btn-primary btn-block")}
-                    disabled = { false || disabled }
-                    onClick={this.props.onClick}
-                  
-                >
-                 { placeholder || "Button" }
-                </button>
-            </div>
-        );
-    }
+        >
+            {placeholder}
+            {<i className="material-icons" style={styleColorIcon}>
+                {icon}
+            </i>}
+
+        </button>
+
+    );
+
 }
 
