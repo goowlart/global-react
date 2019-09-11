@@ -1,17 +1,17 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
-import Login from './pages/Login'
-import Register from './pages/Register'
+import LoginPage from './pages/LoginPage'
+import SignupPage from './pages/SignupPage'
 import Home from './pages/Home'
 
 
 const PrivatedRoute =  ({component: Component, ...rest}) => (
     <Route {...rest} render={props => (
         localStorage.isAthenticated ? (
-            <Component {...props} /> 
+           <Component {...props} /> 
         ):
         (
-            <Redirect to={{pathname:'/', state: {from : props.location}}}/>
+            <Redirect to={{pathname:'/login', state: {from : props.location}}}/>
         )
 
     )} />
@@ -21,9 +21,9 @@ const PrivatedRoute =  ({component: Component, ...rest}) => (
 const Routes = () => (
     <BrowserRouter>
         <Switch>
-            <Route exact path="/" component={Login}></Route>
-            <Route exact path="/register" component={Register}></Route>
-            <PrivatedRoute path="/home"  component={Home} />
+            <Route exact path="/login" component={LoginPage}></Route>
+            <Route exact path="/register" component={SignupPage}></Route>
+            <PrivatedRoute path="/"  component={Home} />
         </Switch>
     </BrowserRouter>
 );

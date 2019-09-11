@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import { register } from "../../auth"
+import  {register}  from "../../auth"
 import "./style.css"
 
-export default class Register extends Component {
+export default class SignupPage extends Component {
 
     constructor () {
         super();
@@ -28,7 +28,7 @@ export default class Register extends Component {
             password
         }
         if (password === password2) {
-            register(user)
+          register(user)
             this.props.history.push("/home") 
         }else {
             this.setState({
@@ -97,10 +97,9 @@ export default class Register extends Component {
 
     }
 
-
-    redirect = () => {
-        this.props.history.push("/") 
-    }
+    redirect = (root) => {        
+      this.props.history.push(root)
+  }
     
 
     render() {
@@ -148,7 +147,7 @@ export default class Register extends Component {
                         {email && password && name && password2 !== null  ? ( <button type="button" className="btn btn-primary btn-block" onClick={this.validate}>Sign up</button> ) : ( <button type="button" disabled className="btn btn-primary btn-block"> Sign up</button> )}
                         
                                
-                        <p onClick={this.redirect}>Return to login screen</p>
+                        <p onClick={() => this.redirect('/login')}>Return to login screen</p>
                     </div>
     
         )

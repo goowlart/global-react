@@ -40,9 +40,6 @@ button {
   position: absolute;
   right: 20px;
       width: 42px;
-
-
-
       border-radius: 18px;
       background: transparent;
       border: 0;
